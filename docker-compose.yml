@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  pg-prevalent:
+    image: postgres:14.1-alpine
+    container_name: postgres_prevalent
+    environment:
+      POSTGRES_DB: prevalent_database
+      POSTGRES_USER: prevalent
+      POSTGRES_PASSWORD: prevalent
+    ports:
+      - 5432:5432
+    volumes:
+      - pg-prevalent-data:/var/lib/postgresql/data
+
+volumes:
+  pg-prevalent-data:
